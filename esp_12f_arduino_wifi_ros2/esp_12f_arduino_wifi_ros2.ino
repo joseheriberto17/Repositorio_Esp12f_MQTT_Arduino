@@ -30,7 +30,7 @@
 // parametros principal de la red que se conectará
 const char* ssid = "PcRobbie";
 const char* password = "1234567890";
-const char* mqtt_server = "192.168.134.74"; //misma ip del computador que le asigno la red
+const char* mqtt_server = "192.168.41.74"; //misma ip del computador que le asigno la red
 const char* topic_s = "mqtt_sub_1"; // topico que se va a subscribirse.
 const char* topic_p = "mqtt_pub_1"; // topico donde publica los datos.
 
@@ -41,8 +41,8 @@ PubSubClient client(espClient);
 // funcion que maneja la recepción de datos por parte del BROKER.
 void callback(char* topic_s, byte* payload, unsigned int length) {
 
-  char message[5]={0x00};
-  uint8_t count =0;
+  char message[14]={0x00};
+  uint8_t count = 0;
 
   // lees todo los caracteres y te quedas con el mensaje real del BROKER.
   for(int i=0;i<length;i++){
@@ -51,8 +51,7 @@ void callback(char* topic_s, byte* payload, unsigned int length) {
       count++;
     }
   }
-  
-  Serial.println (message);  // imprimes el mensaje completo al serial.
+  Serial.println(message); 
 }
 
 void setup() {
