@@ -30,7 +30,7 @@
 // parametros principal de la red que se conectará
 const char* ssid = "PcRobbie";
 const char* password = "1234567890";
-const char* mqtt_server = "192.168.41.74"; //misma ip del computador que le asigno la red
+const char* mqtt_server = "10.42.0.1"; //misma ip del computador que le asigno la red
 const char* topic_s = "mqtt_sub_1"; // topico que se va a subscribirse.
 const char* topic_p = "mqtt_pub_1"; // topico donde publica los datos.
 
